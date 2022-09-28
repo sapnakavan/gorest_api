@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 public class UserCRUDTest extends TestBase {
 
     @Test
-    public void getAllUsersInfo() {
+    public void Test1() {
         Response response=given()
                 .when()
                 .get("/public/v2/users");
@@ -21,7 +21,7 @@ public class UserCRUDTest extends TestBase {
     }
 
     @Test
-    public void getSingleuserInfo() {
+    public void Test2() {
         Response response=given()
                 .when()
                 .get("/public/v2/users/2296");
@@ -29,7 +29,7 @@ public class UserCRUDTest extends TestBase {
         response.prettyPrint();
     }
     @Test
-    public void createUser() {
+    public void Test3() {
 
         GorestPojo gorestPojo = new GorestPojo();
         gorestPojo.setName("sapna Ramakrishna");
@@ -49,7 +49,7 @@ public class UserCRUDTest extends TestBase {
         response.prettyPrint();
     }
     @Test
-    public void updateUserWithPatch(){
+    public void Test4(){
         GorestPojo gorestPojo = new GorestPojo();
         gorestPojo.setName("sapna Ramakrishna");
         gorestPojo.setGender("female");
@@ -68,7 +68,7 @@ public class UserCRUDTest extends TestBase {
         response.prettyPrint();
     }
     @Test
-    public void delete(){
+    public void Test5(){
         Response response=given()
                 .when()
                 .delete("/public/v2/users/3671");
